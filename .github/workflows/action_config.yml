@@ -45,7 +45,7 @@ jobs:
     
     - name: Build and deploy
       run: |
-        yarn build
+        yarn build:production
         $(yarn bin)/firebase deploy --token "1//0g3UIi76oDwt5CgYIARAAGBASNwF-L9Ir7tAlVkl_uok6IzpmGNQIgWdM2r68tmiB6rwaiUX-vEG9q07iNZgN4-rNxnh63YqVRBo"
 
  

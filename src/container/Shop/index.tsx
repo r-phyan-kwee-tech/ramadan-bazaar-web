@@ -8,7 +8,7 @@ import {CardWrapperRow} from '../../components/MenuItemCard/index.style';
 import axios from 'axios';
 import ShopActionType from './constants';
 import ShopReducer, {initialState} from './reducer';
-import {RouteComponentProps, StaticContext, withRouter} from 'react-router';
+import {RouteComponentProps, StaticContext} from 'react-router';
 
 type ShopContainerPageType = RouteComponentProps<any, StaticContext, any> & {
   children?: React.ReactNode;
