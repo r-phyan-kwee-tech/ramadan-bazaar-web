@@ -9,38 +9,40 @@ import {
   PriceOrderWrapper,
   OrderButton,
 } from './index.style';
+import {MenuItem} from '../../container/Shop/reducer';
+export type MenuCardComponentType = {
+  menuItem: MenuItem;
+};
+const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({menuItem}) => {
+  const {
+    unit_price,
+    menu_item_name,
+    description_uni,
+    menu_category_name,
+    phone_number_1,
+  } = menuItem;
+  return (
+    <>
+      <MenuItemCard
+        hoverable
+        cover={
+          <img
+            alt="example"
+            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+          />
+        }>
+        <MenuItemTitle>{menu_item_name}</MenuItemTitle>
+        <MenuItemDescription>{description_uni}</MenuItemDescription>
+        <TagWrapper>
+          <Tag>{menu_category_name}</Tag>
+        </TagWrapper>
+        <PriceOrderWrapper>
+          <MenuItemPrice>{`${unit_price} MMK`}</MenuItemPrice>
 
-const MenuItemCardComponent: React.FC = () => (
-  <>
-    <MenuItemCard
-      hoverable
-      cover={
-        <img
-          alt="example"
-          src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-        />
-      }>
-      <MenuItemTitle>Item Title</MenuItemTitle>
-      <MenuItemDescription>
-        is simply dummy text of the printing and typesetting industry. Lorem
-        Ipsum has been the industry's standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a
-        type specimen book. It has survived not only five centuries, but also
-        the leap into electronic typesetting, remaining essentially unchanged.
-        It was popularised in the 1960s with the release of Letraset sheets
-        containing Lorem Ipsum passages, and more recently with desktop
-        publishing software like Aldus PageMaker including versions of Lorem
-        Ipsum.
-      </MenuItemDescription>
-      <TagWrapper>
-        <Tag>123123</Tag>
-      </TagWrapper>
-      <PriceOrderWrapper>
-        <MenuItemPrice>1000 MMK</MenuItemPrice>
-
-        <OrderButton href="tel:+959421575529">အော်ဒါမှာမည်</OrderButton>
-      </PriceOrderWrapper>
-    </MenuItemCard>
-  </>
-);
+          <OrderButton href={`tel:${phone_number_1}`}>အော်ဒါမှာမည်</OrderButton>
+        </PriceOrderWrapper>
+      </MenuItemCard>
+    </>
+  );
+};
 export default MenuItemCardComponent;

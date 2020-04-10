@@ -1,6 +1,20 @@
 import ShopActionType from './constants';
+
+export interface MenuItem {
+  shop_id: string;
+  name_uni: string;
+  address: string;
+  phone_number_1: string;
+  phone_number_2: string;
+  phone_number_3: string;
+  menu_item_name: string;
+  description_uni: string;
+  unit_price: string;
+  menu_category_name: string;
+}
+
 type ShopState = {
-  shop: any;
+  menu_items: MenuItem[];
   loading: boolean;
   error: string;
 };
@@ -9,7 +23,7 @@ type ShopAction = {
   payload: any;
 };
 export const initialState = {
-  shop: {},
+  menu_items: [],
   loading: true,
   error: '',
 };
@@ -19,20 +33,20 @@ const ShopReducer = (state: ShopState, action: ShopAction): ShopState => {
     case ShopActionType.GET_SHOP_DETAIL:
       return {
         loading: true,
-        shop: {},
+        menu_items: [],
         error: '',
       };
 
     case ShopActionType.GET_SHOP_DETAIL_SUCCESS:
       return {
         loading: false,
-        shop: action.payload,
+        menu_items: action.payload || [],
         error: '',
       };
     case ShopActionType.GET_SHOP_DETAIL_FAILED:
       return {
         loading: false,
-        shop: {},
+        menu_items: [],
         error: 'Something went wrong',
       };
 
