@@ -28,7 +28,7 @@ const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({menuItem}) => {
         cover={
           <img
             alt="example"
-            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+            src="https://asian-recipe.com/wp-content/uploads/2017/11/beef-samosas-india.jpg"
           />
         }>
         <MenuItemTitle>{menu_item_name}</MenuItemTitle>
