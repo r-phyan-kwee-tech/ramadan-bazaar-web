@@ -10,11 +10,11 @@ export const MenuItemCard = styled(Card)`
     border-radius: 25px 25px 25px 25px;
     .ant-card-cover {
       img {
-        height: calc(100vh / 2.5);
+        height: calc(100vh / 3.5);
         border-radius: 25px 25px 0 0;
         object-fit: cover;
         @media screen and (min-width: 64em) {
-          height: calc(100vh / 4.5);
+          height: calc(100vh / 5.5);
         }
       }
     }
@@ -32,7 +32,7 @@ export const MenuItemDescription = styled.p`
   color: black;
   font-size: 0.8rem;
   text-align: left;
-  height: 10rem;
+  height: 5rem;
   overflow: scroll;
 
   font-family: 'Lato';

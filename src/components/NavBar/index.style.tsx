@@ -10,4 +10,6 @@ export const NavBarTitle = styled.p`
   line-height: 3.5rem;
   margin: 0;
   text-align: center;
+  font-size: large;
+  font-weight: bold;
 `;
