@@ -16,7 +16,6 @@ export type MenuCardComponentType = {
 const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({ menuItem }) => {
   const {
     unit_price,
-    menu_item_name,
     description_uni,
     menu_category_name,
     phone_number_1,
