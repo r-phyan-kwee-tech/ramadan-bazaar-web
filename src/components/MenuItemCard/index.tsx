@@ -39,7 +39,7 @@ const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({ menuItem }) =>
         <PriceOrderWrapper>
           <MenuItemPrice>{`${unit_price} MMK`}</MenuItemPrice>
 
-          <OrderButton href={`tel:${phone_number_1}`}>အော်ဒါမှာမည်</OrderButton>
+          <OrderButton href={`tel:+${phone_number_1}`}>အော်ဒါမှာမည်</OrderButton>
         </PriceOrderWrapper>
       </MenuItemCard>
     </>
