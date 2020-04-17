@@ -1,4 +1,4 @@
-import ShopActionType from './constants';
+import ShopActionType from "./constants";
 
 export interface MenuItem {
   shop_id: string;
@@ -9,6 +9,7 @@ export interface MenuItem {
   phone_number_3: string;
   menu_item_name: string;
   description_uni: string;
+  image_url: string;
   unit_price: string;
   menu_category_name: string;
 }
@@ -25,7 +26,7 @@ type ShopAction = {
 export const initialState = {
   menu_items: [],
   loading: true,
-  error: '',
+  error: "",
 };
 
 const ShopReducer = (state: ShopState, action: ShopAction): ShopState => {
@@ -34,20 +35,20 @@ const ShopReducer = (state: ShopState, action: ShopAction): ShopState => {
       return {
         loading: true,
         menu_items: [],
-        error: '',
+        error: "",
       };
 
     case ShopActionType.GET_SHOP_DETAIL_SUCCESS:
       return {
         loading: false,
         menu_items: action.payload || [],
-        error: '',
+        error: "",
       };
     case ShopActionType.GET_SHOP_DETAIL_FAILED:
       return {
         loading: false,
         menu_items: [],
-        error: 'Something went wrong',
+        error: "Something went wrong",
       };
 
     default:

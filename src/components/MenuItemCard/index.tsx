@@ -9,17 +9,18 @@ import {
   PriceOrderWrapper,
   OrderButton,
 } from './index.style';
-import {MenuItem} from '../../container/Shop/reducer';
+import { MenuItem } from '../../container/Shop/reducer';
 export type MenuCardComponentType = {
   menuItem: MenuItem;
 };
-const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({menuItem}) => {
+const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({ menuItem }) => {
   const {
     unit_price,
     menu_item_name,
     description_uni,
     menu_category_name,
     phone_number_1,
+    image_url
   } = menuItem;
   return (
     <>
@@ -28,7 +29,7 @@ const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({menuItem}) => {
         cover={
           <img
             alt="example"
-            src="https://asian-recipe.com/wp-content/uploads/2017/11/beef-samosas-india.jpg"
+            src={image_url}
           />
         }>
         <MenuItemTitle>{menu_item_name}</MenuItemTitle>
