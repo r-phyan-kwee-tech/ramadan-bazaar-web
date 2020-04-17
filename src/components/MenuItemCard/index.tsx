@@ -32,7 +32,7 @@ const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({ menuItem }) =>
             src={image_url}
           />
         }>
-        <MenuItemTitle>{menu_item_name}</MenuItemTitle>
+        <MenuItemTitle>{description_uni}</MenuItemTitle>
         <MenuItemDescription>{description_uni}</MenuItemDescription>
         <TagWrapper>
           <Tag>{menu_category_name}</Tag>
