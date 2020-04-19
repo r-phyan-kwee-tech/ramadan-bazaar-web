@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Rabbit from '../../rabbit'
 import {
   MenuItemCard,
   MenuItemTitle,
@@ -12,8 +13,9 @@ import {
 import { MenuItem } from '../../container/Shop/reducer';
 export type MenuCardComponentType = {
   menuItem: MenuItem;
+  isZawgyi: boolean;
 };
-const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({ menuItem }) => {
+const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({ menuItem, isZawgyi }) => {
   const {
     unit_price,
     description_uni,
@@ -31,15 +33,15 @@ const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({ menuItem }) =>
             src={image_url}
           />
         }>
-        <MenuItemTitle>{description_uni}</MenuItemTitle>
-        <MenuItemDescription>{description_uni}</MenuItemDescription>
+        <MenuItemTitle>{isZawgyi ? Rabbit.uni2zg(description_uni) : description_uni}</MenuItemTitle>
+        <MenuItemDescription>{isZawgyi ? Rabbit.uni2zg(description_uni) : description_uni}</MenuItemDescription>
         <TagWrapper>
-          <Tag>{menu_category_name}</Tag>
+          <Tag>{isZawgyi ? Rabbit.uni2zg(menu_category_name) : menu_category_name}</Tag>
         </TagWrapper>
         <PriceOrderWrapper>
           <MenuItemPrice>{`${unit_price} MMK`}</MenuItemPrice>
 
-          <OrderButton href={`tel:+${phone_number_1}`}>အော်ဒါမှာမည်</OrderButton>
+          <OrderButton href={`tel:+${phone_number_1}`}>{isZawgyi ? Rabbit.uni2zg("အော်ဒါမှာမည်") : "အော်ဒါမှာမည်"}</OrderButton>
         </PriceOrderWrapper>
       </MenuItemCard>
     </>

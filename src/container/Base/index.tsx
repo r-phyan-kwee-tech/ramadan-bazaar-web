@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Shop from '../Shop';
 
-import {MobileWrapper} from './index.style';
+import { MobileWrapper } from './index.style';
 
 const BaseContainer: React.FC = () => (
   <>
@@ -12,7 +12,7 @@ const BaseContainer: React.FC = () => (
         <Switch>
           <Route
             exact
-            path="/shop/:id"
+            path="/shop/:id/:isZawgyi"
             component={(props: any) => <Shop {...props} />}
           />
 
