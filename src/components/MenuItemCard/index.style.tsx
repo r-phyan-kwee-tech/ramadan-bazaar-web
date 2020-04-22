@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Card, Row} from 'antd';
+import { Card, Row } from 'antd';
 
 export const CardWrapperRow = styled(Row)`
   margin: 0 !important;
@@ -35,6 +35,15 @@ export const MenuItemDescription = styled.p`
   height: 5rem;
   overflow: scroll;
 
+  font-family: 'Lato';
+`;
+export const LastOrderDescription = styled.p`
+  color: black;
+  font-size: 1rem;
+  text-align: left;
+  height: 2rem;
+  overflow: scroll;
+  font-weight:bold;
   font-family: 'Lato';
 `;
 

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import isEmpty from 'lodash/isEmpty'
 import Rabbit from '../../rabbit'
 import {
   MenuItemCard,
@@ -9,6 +10,7 @@ import {
   TagWrapper,
   PriceOrderWrapper,
   OrderButton,
+  LastOrderDescription,
 } from './index.style';
 import { MenuItem } from '../../container/Shop/reducer';
 export type MenuCardComponentType = {
@@ -19,9 +21,11 @@ const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({ menuItem, isZa
   const {
     unit_price,
     description_uni,
+    menu_item_name,
     menu_category_name,
     phone_number_1,
-    image_url
+    image_url,
+    last_order_remark
   } = menuItem;
   return (
     <>
@@ -29,12 +33,13 @@ const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({ menuItem, isZa
         hoverable
         cover={
           <img
-            alt="example"
+            alt={menu_item_name}
             src={image_url}
           />
         }>
-        <MenuItemTitle>{isZawgyi ? Rabbit.uni2zg(description_uni) : description_uni}</MenuItemTitle>
+        <MenuItemTitle>{isZawgyi ? Rabbit.uni2zg(menu_item_name) : menu_item_name}</MenuItemTitle>
         <MenuItemDescription>{isZawgyi ? Rabbit.uni2zg(description_uni) : description_uni}</MenuItemDescription>
+        {!isEmpty(last_order_remark) && <LastOrderDescription>{isZawgyi ? Rabbit.uni2zg(last_order_remark) : last_order_remark}</LastOrderDescription>}
         <TagWrapper>
           <Tag>{isZawgyi ? Rabbit.uni2zg(menu_category_name) : menu_category_name}</Tag>
         </TagWrapper>

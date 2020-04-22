@@ -4,6 +4,7 @@ export interface MenuItem {
   shop_id: string;
   name_uni: string;
   address: string;
+  last_order_remark: string;
   phone_number_1: string;
   phone_number_2: string;
   phone_number_3: string;
