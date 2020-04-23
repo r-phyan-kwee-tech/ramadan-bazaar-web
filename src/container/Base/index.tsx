@@ -8,7 +8,6 @@ import { MobileWrapper } from './index.style';
 
 const tagManagerArgs = {
   gtmId: 'GTM-NHF5B3P',
-
 }
 
 TagManager.initialize(tagManagerArgs)
