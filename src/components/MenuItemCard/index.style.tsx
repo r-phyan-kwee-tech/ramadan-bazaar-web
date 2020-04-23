@@ -56,9 +56,10 @@ export const TagWrapper = styled.p`
 `;
 
 export const Tag = styled.span`
-  background: rgb(187, 54, 46);
+  
+  border:1px solid rgb(187, 54, 46);
   width: auto;
-  color: white;
+  color: rgb(187, 54, 46);
   padding: 0.5rem;
   margin: 0 0.5rem 0 0;
 
@@ -81,10 +82,11 @@ export const MenuItemPrice = styled.p`
   font-weight: 900;
 `;
 
-export const OrderButton = styled.a`
+export const OrderButton = styled.button`
   color: white;
   border-radius: 100px;
   text-align: center;
+  border: 0;
   background: rgb(187, 54, 46);
   height: 2.5rem;
   line-height: 1.5rem;

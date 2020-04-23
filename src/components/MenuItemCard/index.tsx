@@ -1,6 +1,7 @@
 import * as React from 'react';
 import isEmpty from 'lodash/isEmpty'
 import Rabbit from '../../rabbit'
+import TagManager from 'react-gtm-module'
 import {
   MenuItemCard,
   MenuItemTitle,
@@ -19,6 +20,7 @@ export type MenuCardComponentType = {
 };
 const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({ menuItem, isZawgyi }) => {
   const {
+    name_uni,
     unit_price,
     description_uni,
     menu_item_name,
@@ -46,7 +48,22 @@ const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({ menuItem, isZa
         <PriceOrderWrapper>
           <MenuItemPrice>{`${unit_price} MMK`}</MenuItemPrice>
 
-          <OrderButton href={`tel:+${phone_number_1}`}>{isZawgyi ? Rabbit.uni2zg("အော်ဒါမှာမည်") : "အော်ဒါမှာမည်"}</OrderButton>
+          <OrderButton onClick={() => {
+            window.location.href = `tel:+${phone_number_1}`
+            const tagManagerArgs = {
+              dataLayer: {
+                isZawgyi: isZawgyi,
+                menu_item_name: menu_item_name,
+                shop_name: name_uni
+              },
+              events: {
+                sendUserInfo: 'userClickToOrder'
+              },
+              dataLayerName: 'GetMenuItemDataLayer'
+            }
+            TagManager.dataLayer(tagManagerArgs)
+
+          }}>{isZawgyi ? Rabbit.uni2zg("အော်ဒါမှာမည်") : "အော်ဒါမှာမည်"}</OrderButton>
         </PriceOrderWrapper>
       </MenuItemCard>
     </>
