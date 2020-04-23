@@ -57,7 +57,7 @@ const MenuItemCardComponent: React.FC<MenuCardComponentType> = ({ menuItem, isZa
                 shop_name: name_uni
               },
               events: {
-                sendUserInfo: 'userClickToOrder'
+                userClickToOrder: 'userClickToOrder'
               },
               dataLayerName: 'GetMenuItemDataLayer'
             }
